@@ -82,8 +82,8 @@
     font-family: 'Nunito', sans-serif;
     position: relative;
     margin-right: 25px;
-    padding: 35px 0;
-    color: #FFFFFF !important;
+    padding: 20px 0;
+    color: var(--dark) !important;
     font-size: 18px;
     font-weight: 600;
     outline: none;
@@ -140,11 +140,13 @@
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
+        margin-bottom: 75px;
     }
     
     .sticky-top.navbar-light {
         position: fixed;
         background: #FFFFFF;
+        margin-bottom: 0;
     }
 
     .navbar-light .navbar-nav .nav-link::before {
@@ -177,6 +179,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* @media (min-width: 992px) {
+    .hero-header {
+        margin-top: 75px;
+    }
+} */
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: rgba(255, 255, 255, .5);
@@ -467,11 +475,21 @@
 }
 
 .wishlist-icon:hover {
-  color: #FF2400; /* bootstrap red */
+  color: #FF2400;
 }
 
 .wishlist-icon:hover i {
   font-family: "Font Awesome 5 Free";
-  font-weight: 900; /* solid heart */
-  content: "\f004"; /* heart unicode */
+  font-weight: 900;
+  content: "\f004";
+}
+
+.filter-bar {
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .filter-bar {
+    margin-top: 80px;
+  }
 }
