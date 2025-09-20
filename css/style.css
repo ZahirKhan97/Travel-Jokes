@@ -255,14 +255,24 @@
 /*** Package ***/
 .package-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    border-radius: 8px; /* optional rounded corners */
+    transition: all 0.3s ease-in-out; /* smooth effect */
+    background: #fff; /* ensure card look */
 }
 
 .package-item img {
-    transition: .5s;
+    transition: 0.5s;
 }
 
+/* Image zoom */
 .package-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+/* Card move + shadow enhance */
+.package-item:hover {
+    transform: translateY(-8px);  /* upar thoda move hoga */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* thoda strong shadow */
 }
 
 
