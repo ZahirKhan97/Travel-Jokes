@@ -78,6 +78,17 @@
 
 
 /*** Navbar ***/
+.navbar-light {
+    margin-bottom: 20px; /* Default small screens */
+}
+
+/* Desktop screens */
+@media (min-width: 992px) {
+    .navbar-light {
+        margin-bottom: 80px;
+    }
+}
+
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Nunito', sans-serif;
     position: relative;
@@ -140,13 +151,12 @@
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
-        margin-bottom: 75px;
     }
     
     .sticky-top.navbar-light {
         position: fixed;
         background: #FFFFFF;
-        margin-bottom: 0;
+        margin-bottom: 80px;
     }
 
     .navbar-light .navbar-nav .nav-link::before {
@@ -493,3 +503,128 @@
     margin-top: 80px;
   }
 }
+
+/* Main big image */
+.package-gallery-main {
+  width: 100%;
+  height: 400px;           /* desktop ke liye fixed height */
+  object-fit: cover;       /* image crop ho kar fit ho */
+  border-radius: 10px;
+}
+
+/* Small images */
+.package-gallery-thumb {
+  width: 100%;
+  height: 140px;           /* sab thumbnails equal size */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Mobile screens */
+@media (max-width: 767.98px) {
+  .package-gallery-main {
+    height: 250px;        /* chhoti screen par height kam ho */
+  }
+
+  .package-gallery-thumb {
+    height: 100px;        /* thumbnails bhi chhoti */
+  }
+}
+
+.modal-content .btn-close-top {
+  z-index: 1051; /* higher than carousel controls */
+}
+
+/* Smaller carousel arrows with only icon */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;          /* clickable area */
+  height: 60px;         /* square area */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;     /* remove weird overlay */
+  border-radius: 50%;   /* optional, for hover effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;         /* slightly visible on image */
+  transition: opacity 0.3s;
+  z-index: 1050;        /* above image, below close button */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Optional: make the icon bigger */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%; /* full size icon */
+}
+
+
+/* Timeline base line disable */
+.timeline::before {
+  display: none;
+}
+
+/* Each item position relative */
+.timeline-item {
+  position: relative;
+}
+
+/* Connector line only between icons */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 10%; /* icon ke niche se start */
+  left: 19px; /* icon center */
+  width: 3px;
+  bottom: -50px;  /* fixed gap between icons */
+  background: #dee2e6;
+  z-index: 1;
+}
+
+/* First item par top se line hide */
+.timeline-item:first-child::after {
+  top: 10px;   /* sirf icon ke neeche se line start ho */
+}
+
+/* Last item par line remove */
+.timeline-item:last-child::after {
+  /* display: none; */
+  bottom: -5%;
+}
+
+/* Icon on top of line */
+.timeline-icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* Collapse animation sirf content ke liye */
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+/* Open hone par */
+.collapse-content.open {
+  max-height: 500px; /* jitna content hoga utna space allow karega */
+  opacity: 1;
+}
+
+/* Plus/Minus rotation */
+.toggle-content i {
+  transition: transform 0.3s ease;
+}
+.toggle-content.open i {
+  transform: rotate(180deg);
+}
+
+
+
+
