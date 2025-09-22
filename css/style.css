@@ -494,12 +494,12 @@
   content: "\f004";
 }
 
-.filter-bar {
+.main-content {
   margin-top: 20px;
 }
 
 @media (min-width: 992px) {
-  .filter-bar {
+  .main-content {
     margin-top: 80px;
   }
 }
