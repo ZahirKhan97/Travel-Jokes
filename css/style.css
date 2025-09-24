@@ -488,6 +488,18 @@
   color: #FF2400;
 }
 
+.wishlist-icon .active:hover {
+  color: #fff;
+}
+
+.wishlist-icon .active {
+  color: #FF2400;
+}
+
+.wishlist-color {
+    color: #FF2400;
+}
+
 .wishlist-icon:hover i {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
