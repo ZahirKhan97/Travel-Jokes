@@ -187,22 +187,39 @@
                       <div class="text-center mb-4">
                         <img
                           src="img/team-1.jpg"
-                          class="rounded-circle mb-2"
+                          class="profile-avatar mb-2"
                           width="80"
                           alt="User Avatar"
+                          id="sidebarPreview1"
                         />
                         <h5 class="mb-0">John Doe</h5>
                         <small class="text-muted">john@example.com</small>
+                        <!-- Change Profile Button (email ke neeche rakha hai) -->
+                        <div class="mt-2">
+                          <label
+                            for="uploadSidebar1"
+                            class="btn btn-sm btn-outline-primary"
+                          >
+                            <i class="fa fa-camera me-2"></i> Change Profile
+                          </label>
+                          <input
+                            type="file"
+                            id="uploadSidebar1"
+                            class="d-none profile-upload"
+                            accept="image/*"
+                            data-preview="sidebarPreview1"
+                          />
+                        </div>
                       </div>
                       <hr />
                       <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
+                        <!-- <li class="nav-item mb-2">
                           <a class="nav-link active" href="user-panel.html"
                             ><i class="fa fa-home me-2"></i>Dashboard</a
                           >
-                        </li>
+                        </li> -->
                         <li class="nav-item mb-2">
-                          <a class="nav-link" href="#"
+                          <a class="nav-link" href="user-panel.html"
                             ><i class="fa fa-book me-2"></i>My Bookings</a
                           >
                         </li>
@@ -217,9 +234,9 @@
                           >
                         </li>
                         <li class="nav-item mb-2">
-                          <a class="nav-link" href="#"
-                            ><i class="fa fa-cog me-2"></i>Settings</a
-                          >
+                          <a class="nav-link" href="change-password.html">
+                            <i class="fa fa-lock me-2"></i>Change Password
+                          </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link text-danger" href="#"
@@ -244,22 +261,39 @@
                   <div class="text-center mb-4">
                     <img
                       src="img/team-1.jpg"
-                      class="rounded-circle mb-2"
+                      class="profile-avatar mb-2"
                       width="80"
                       alt="User Avatar"
+                      id="sidebarPreview2"
                     />
                     <h5 class="mb-0">John Doe</h5>
                     <small class="text-muted">john@example.com</small>
+
+                    <div class="mt-2">
+                      <label
+                        for="uploadSidebar2"
+                        class="btn btn-sm btn-outline-primary"
+                      >
+                        <i class="fa fa-camera me-2"></i> Change Profile
+                      </label>
+                      <input
+                        type="file"
+                        id="uploadSidebar2"
+                        class="d-none profile-upload"
+                        accept="image/*"
+                        data-preview="sidebarPreview2"
+                      />
+                    </div>
                   </div>
                   <hr />
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2">
+                    <!-- <li class="nav-item mb-2">
                       <a class="nav-link active" href="user-panel.html"
                         ><i class="fa fa-home me-2"></i>Dashboard</a
                       >
-                    </li>
+                    </li> -->
                     <li class="nav-item mb-2">
-                      <a class="nav-link" href="#"
+                      <a class="nav-link" href="user-panel.html"
                         ><i class="fa fa-book me-2"></i>My Bookings</a
                       >
                     </li>
@@ -274,9 +308,9 @@
                       >
                     </li>
                     <li class="nav-item mb-2">
-                      <a class="nav-link" href="#"
-                        ><i class="fa fa-cog me-2"></i>Settings</a
-                      >
+                      <a class="nav-link" href="change-password.html">
+                        <i class="fa fa-lock me-2"></i>Change Password
+                      </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-danger" href="#"
@@ -284,7 +318,7 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-success" href="#"
+                      <a class="nav-link text-success" href="index.html"
                         ><i class="fa fa-arrow-left me-2"></i>Back To Home</a
                       >
                     </li>
@@ -312,7 +346,7 @@
                   <div class="row g-4">
                     <!-- Bookings Card -->
                     <div class="col-md-6 col-lg-6">
-                      <a href="/bookings" class="text-decoration-none">
+                      <a href="user-panel.html" class="text-decoration-none">
                         <div
                           class="card text-white bg-primary shadow-sm border-0"
                         >
@@ -331,7 +365,7 @@
 
                     <!-- Wishlist Card -->
                     <div class="col-md-6 col-lg-6">
-                      <a href="/wishlist" class="text-decoration-none">
+                      <a href="wishlist.html" class="text-decoration-none">
                         <div
                           class="card text-white bg-warning shadow-sm border-0"
                         >
@@ -348,8 +382,9 @@
                       </a>
                     </div>
                   </div>
+                  <hr class="gy-2" />
                   <!-- Recent Bookings Table -->
-                  <div class="mt-5">
+                  <div>
                     <h5 class="fw-bold mb-3">Recent Bookings</h5>
                     <div class="table-responsive">
                       <table class="table table-bordered align-middle">

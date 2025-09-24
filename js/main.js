@@ -90,6 +90,7 @@
         }
     });
 
+    // Password show & hide
   document.querySelectorAll(".toggle-password").forEach((icon) => {
     icon.addEventListener("click", function () {
       const input = document.getElementById(this.dataset.target);
@@ -104,6 +105,39 @@
       }
     });
   });
-    
+
+  // Sidebar profile image preview
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".profile-upload").forEach(function (input) {
+        input.addEventListener("change", function () {
+        const file = this.files[0];
+        const previewId = this.getAttribute("data-preview");
+        const previewImg = document.getElementById(previewId);
+
+        if (file && previewImg) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+            previewImg.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+        });
+    });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const defaultAvatar = "img/user.png"; // apni default image ka path
+
+    document.querySelectorAll(".profile-avatar").forEach(function (img) {
+        // Agar src empty ho ya image load na ho to default set kare
+        if (!img.getAttribute("src")) {
+        img.src = defaultAvatar;
+        }
+
+        img.onerror = function () {
+        img.src = defaultAvatar;
+        };
+    });
+    });
 })(jQuery);
 
