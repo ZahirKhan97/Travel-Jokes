@@ -129,10 +129,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="index.html" class="nav-item nav-link">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
             <a href="service.html" class="nav-item nav-link">Services</a>
-            <a href="user-panel.html" class="nav-item nav-link">User Panel</a>
+            <a href="user-panel.html" class="nav-item nav-link active">User Panel</a>
             <a href="package.html" class="nav-item nav-link">Packages</a>
 
             <div class="nav-item dropdown">
@@ -162,225 +162,160 @@
       <div class="container">
         <div class="row">
           <div class="container mb-4 py-2 main-content">
-            <div class="row g-4 align-items-start">
-              <!-- Left: Booking Form -->
-              <div class="col-lg-8">
-                <div class="bg-light rounded shadow p-4 h-100">
-                  <h4 class="mb-3 fw-bold text-primary">
-                    Complete Your Booking
-                  </h4>
-                  <form
-                    action="submit-booking.php"
-                    method="POST"
-                    class="row g-3"
+            <div class="row g-4">
+          <!-- Sidebar -->
+          <div class="col-lg-3">
+            <div class="bg-light rounded shadow p-4 h-100">
+              <div class="text-center mb-4">
+                <img
+                  src="img/team-1.jpg"
+                  class="rounded-circle mb-2"
+                  width="80"
+                  alt="User Avatar"
+                />
+                <h5 class="mb-0">John Doe</h5>
+                <small class="text-muted">john@example.com</small>
+              </div>
+              <hr />
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link active"
+                    href="#"
+                    ><i class="fa fa-home me-2"></i>Dashboard</a
                   >
-                    <!-- Full Name -->
-                    <div class="col-md-6">
-                      <label class="form-label fw-semibold">Full Name</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter your full name"
-                        required
-                      />
+                </li>
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    ><i class="fa fa-book me-2"></i>My Bookings</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    ><i class="fa fa-heart me-2"></i>Wishlist</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    ><i class="fa fa-user me-2"></i>Profile</a
+                  >
+                </li>
+                <li class="nav-item mb-2">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    ><i class="fa fa-cog me-2"></i>Settings</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-danger"
+                    href="#"
+                    ><i class="fa fa-sign-out-alt me-2"></i>Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Main Content -->
+          <div class="col-lg-9">
+            <div class="bg-light rounded shadow p-4 h-100">
+              <h4 class="mb-4 fw-bold text-primary">Welcome, John!</h4>
+              <div class="row g-4">
+                <!-- Stat Cards -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm text-center">
+                    <div class="card-body">
+                      <i class="fa fa-book fa-2x text-primary mb-2"></i>
+                      <h5 class="card-title mb-1">Bookings</h5>
+                      <p class="card-text fw-bold fs-4">3</p>
                     </div>
-
-                    <!-- Email -->
-                    <div class="col-md-6">
-                      <label class="form-label fw-semibold"
-                        >Email Address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Enter your email"
-                        required
-                      />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm text-center">
+                    <div class="card-body">
+                      <i class="fa fa-star fa-2x text-warning mb-2"></i>
+                      <h5 class="card-title mb-1">Reviews</h5>
+                      <p class="card-text fw-bold fs-4">5</p>
                     </div>
-
-                    <!-- Phone -->
-                    <div class="col-md-6">
-                      <label class="form-label fw-semibold">Phone Number</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="+971 55 123 4567"
-                        required
-                      />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm text-center">
+                    <div class="card-body">
+                      <i class="fa fa-gift fa-2x text-success mb-2"></i>
+                      <h5 class="card-title mb-1">Rewards</h5>
+                      <p class="card-text fw-bold fs-4">2</p>
                     </div>
-
-                    <!-- Travelers -->
-                    <div class="col-md-6">
-                      <label class="form-label fw-semibold"
-                        >No. of Travelers</label
-                      >
-                      <select class="form-select" required>
-                        <option value="">Select</option>
-                        <option>1 Person</option>
-                        <option>2 Persons</option>
-                        <option>3 Persons</option>
-                        <option>4+ Persons</option>
-                      </select>
-                    </div>
-
-                    <!-- Date -->
-                    <div class="col-md-6">
-                      <label class="form-label fw-semibold">Travel Date</label>
-                      <input type="date" class="form-control" required />
-                    </div>
-
-                    <!-- Special Request -->
-                    <div class="col-12">
-                      <label class="form-label fw-semibold"
-                        >Special Request</label
-                      >
-                      <textarea
-                        class="form-control"
-                        rows="3"
-                        placeholder="Any special requests?"
-                      ></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary w-100 py-2">
-                        <i class="fa fa-check-circle me-2"></i> Confirm Booking
-                      </button>
-                    </div>
-                  </form>
+                  </div>
                 </div>
               </div>
-
-              <!-- Right: Package Details -->
-              <div class="col-lg-4">
-                <div class="bg-light rounded shadow p-4 h-100">
-                  <!-- Image -->
-                  <div class="position-relative mb-3">
-                    <img
-                      src="img/package-1.jpg"
-                      class="img-fluid w-100 rounded-3"
-                      alt="Package Image"
-                    />
-                    <!-- <span
-                      class="badge bg-primary position-absolute top-0 start-0 m-3"
-                      >Hot Deal</span
-                    > -->
-                  </div>
-
-                  <!-- Details -->
-                  <h5 class="fw-bold mb-3 text-dark">Dubai City Tour</h5>
-
-                  <!-- Location right under heading -->
-                  <p class="mb-3">
-                    <i class="fa fa-map-marker-alt text-primary me-2"></i>Dubai,
-                    UAE
-                  </p>
-
-                  <hr class="my-2" />
-
-                  <!-- Foldable Booking Details -->
-                  <div class="accordion" id="bookingDetailsAccordion">
-                    <!-- Booking Details (collapsed on load) -->
-                    <div class="accordion-item border-0">
-                      <h5 class="accordion-header mb-1" id="headingBooking">
-                        <button
-                          class="accordion-button collapsed fw-semibold text-dark bg-light shadow-none px-0 py-2"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseBooking"
-                          aria-expanded="false"
-                          aria-controls="collapseBooking"
-                        >
-                          <i class="fa fa-info-circle me-2 text-primary"></i>
-                          Booking Details
-                        </button>
-                      </h5>
-                      <div
-                        id="collapseBooking"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="headingBooking"
-                        data-bs-parent="#bookingDetailsAccordion"
-                      >
-                        <div class="accordion-body ps-0 bg-light py-2">
-                          <ul class="list-unstyled mb-0">
-                            <li class="mb-2">
-                              <i class="fa fa-calendar text-primary me-2"></i>
-                              <span class="fw-semibold">Start Date:</span> 15
-                              Oct 2025
-                            </li>
-                            <li class="mb-2">
-                              <i class="fa fa-clock text-primary me-2"></i>
-                              <span class="fw-semibold">Duration:</span> 3 Days,
-                              2 Nights
-                            </li>
-                            <li class="mb-2">
-                              <i class="fa fa-user text-primary me-2"></i>
-                              <span class="fw-semibold">Adult (Age 11+):</span>
-                              1 × <span class="text-primary">AED 70</span>
-                            </li>
-                            <li class="mb-2">
-                              <i class="fa fa-child text-primary me-2"></i>
-                              <span class="fw-semibold">Child (Age 3–10):</span>
-                              1 × <span class="text-primary">AED 50</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Price (expanded on load) -->
-                    <div class="accordion-item border-0 mt-2">
-                      <h5 class="accordion-header mb-1" id="headingPrice">
-                        <button
-                          class="accordion-button fw-semibold text-dark bg-light shadow-none px-0 py-2"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapsePrice"
-                          aria-expanded="true"
-                          aria-controls="collapsePrice"
-                        >
-                          <i class="fa fa-tag me-2 text-primary"></i>
-                          Price
-                        </button>
-                      </h5>
-                      <div
-                        id="collapsePrice"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingPrice"
-                        data-bs-parent="#bookingDetailsAccordion"
-                      >
-                        <div class="accordion-body ps-0 bg-light py-2">
-                          <!-- Coupon Code Field -->
-                          <div class="mb-3">
-                            <label class="form-label fw-semibold"
-                              >Coupon Code</label
-                            >
-                            <div class="input-group">
-                              <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Enter coupon code"
-                              />
-                              <button class="btn btn-primary" type="button">
-                                Apply
-                              </button>
-                            </div>
-                          </div>
-
-                          <!-- Total -->
-                          <div
-                            class="border-top pt-2 mt-2 d-flex justify-content-between align-items-center"
+              <!-- Recent Bookings Table -->
+              <div class="mt-5">
+                <h5 class="fw-bold mb-3">Recent Bookings</h5>
+                <div class="table-responsive">
+                  <table class="table table-bordered align-middle">
+                    <thead class="table-primary">
+                      <tr>
+                        <th>Package</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Dubai City Tour</td>
+                        <td>15 Oct 2025</td>
+                        <td><span class="badge bg-success">Confirmed</span></td>
+                        <td>
+                          <a
+                            href="#"
+                            class="btn btn-sm btn-outline-primary"
+                            >View</a
                           >
-                            <h5 class="text-primary">Total:</h5>
-                            <h4 class="mt-0 text-primary">AED 149</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Desert Safari</td>
+                        <td>01 Sep 2025</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">Pending</span>
+                        </td>
+                        <td>
+                          <a
+                            href="#"
+                            class="btn btn-sm btn-outline-primary"
+                            >View</a
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Abu Dhabi Tour</td>
+                        <td>20 Aug 2025</td>
+                        <td><span class="badge bg-danger">Cancelled</span></td>
+                        <td>
+                          <a
+                            href="#"
+                            class="btn btn-sm btn-outline-primary"
+                            >View</a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>
