@@ -180,8 +180,22 @@
             <!-- Collapsible Filters -->
             <div class="collapse d-lg-block" id="filterCollapse">
               <div class="row g-3 align-items-center">
+                <!-- Search Field -->
+                <div class="col-md-4 col-12">
+                  <form class="input-group custom-search-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search..."
+                    />
+                    <button class="custom-search-btn" type="submit">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </form>
+                </div>
+
                 <!-- Location -->
-                <div class="col-md-3 col-12">
+                <div class="col-md-2 col-12">
                   <div class="dropdown">
                     <button
                       class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-between"
@@ -205,7 +219,7 @@
                 </div>
 
                 <!-- Price Range -->
-                <div class="col-md-3 col-12">
+                <div class="col-md-2 col-12">
                   <div class="dropdown">
                     <button
                       class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-between"
@@ -222,24 +236,24 @@
                       aria-labelledby="priceDropdown"
                     >
                       <li>
-                        <a class="dropdown-item" href="#">AED 100 – AED 200</a>
+                        <a class="dropdown-item" href="#">(AED) 100 – 200</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">AED 200 – AED 300</a>
+                        <a class="dropdown-item" href="#">(AED) 200 – 300</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">AED 300 – AED 500</a>
+                        <a class="dropdown-item" href="#">(AED) 300 – 500</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">AED 500 – AED 1000</a>
+                        <a class="dropdown-item" href="#">(AED) 500 – 1000</a>
                       </li>
-                      <li><a class="dropdown-item" href="#">AED 1000+</a></li>
+                      <li><a class="dropdown-item" href="#">(AED) 1000+</a></li>
                     </ul>
                   </div>
                 </div>
 
                 <!-- Ratings -->
-                <div class="col-md-3 col-12">
+                <div class="col-md-2 col-12">
                   <div class="dropdown">
                     <button
                       class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-between"
@@ -290,7 +304,7 @@
                 </div>
 
                 <!-- Sort By -->
-                <div class="col-md-3 col-12">
+                <div class="col-md-2 col-12">
                   <div class="dropdown">
                     <button
                       class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-between"
