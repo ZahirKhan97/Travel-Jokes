@@ -177,14 +177,13 @@
             </div>
 
             <!-- Sidebar -->
-            <!-- Sidebar -->
             <div class="flex-shrink-0 w-100 w-lg-auto" style="max-width: 350px">
               <div
                 class="bg-light rounded p-4 shadow-sm h-100 d-flex flex-column position-relative"
               >
                 <!-- Header -->
                 <div
-                  class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4"
+                  class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2"
                 >
                   <h5 class="mb-0 fw-bold text-dark">Package Details</h5>
                   <button
@@ -197,33 +196,119 @@
                   </button>
                 </div>
 
-                <!-- Collapsible Content (entire block foldable) -->
+                <!-- Collapsible Content -->
                 <div
                   id="sidebarContent"
                   class="collapse d-lg-flex flex-column flex-grow-1"
+                  style="
+                    max-height: 300px;
+                    overflow-y: auto;
+                    padding-right: 6px;
+                  "
                 >
-                  <!-- Top Details -->
-                  <div>
-                    <p>
-                      <i class="fa fa-map-marker-alt text-primary me-2"></i
-                      >Thailand
-                    </p>
-                    <p>
-                      <i class="fa fa-calendar-alt text-primary me-2"></i>3
-                      Days, 2 Nights
-                    </p>
-                    <p><i class="fa fa-user text-primary me-2"></i>2 Person</p>
+                  <!-- scrollable -->
+
+                  <!-- Price Info -->
+                  <div class="mb-2 border-bottom">
+                    <div>
+                      <small>From </small><del class="text-danger">AED 500</del>
+                      <h4 class="mt-2">
+                        <span class="text-primary">AED 350</span>
+                      </h4>
+                    </div>
                   </div>
 
-                  <!-- Price + Button pinned bottom -->
-                  <div class="border-top pt-3 mt-auto">
-                    <small>From </small><del class="text-danger">AED 199</del>
-                    <h4 class="mt-2">
-                      <span class="text-primary">AED 149</span>
-                    </h4>
-                    <a href="checkout.html" class="btn btn-primary w-100 mt-2"
-                      >Book Now</a
-                    >
+                  <!-- Start Date -->
+                  <div class="mb-2 border-bottom">
+                    <label class="fw-bold">Start Date</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="startDate"
+                      required
+                    />
+                  </div>
+
+                  <!-- Adult Section -->
+                  <div
+                    class="mb-2 d-flex justify-content-between align-items-center border-bottom"
+                  >
+                    <div>
+                      <div class="fw-bold">Adult</div>
+                      <small class="text-dark">Age: 11+</small><br />
+                      <small class="text-dark">AED 350 per person</small>
+                    </div>
+                    <div class="input-group" style="width: 110px">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        type="button"
+                        onclick="updateCount('adult', -1)"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        id="adultCount"
+                        class="form-control text-center"
+                        value="1"
+                        readonly
+                      />
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        type="button"
+                        onclick="updateCount('adult', 1)"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Child Section -->
+                  <div
+                    class="mb-2 d-flex justify-content-between align-items-center border-bottom"
+                  >
+                    <div>
+                      <div class="fw-bold">Child</div>
+                      <small class="text-dark">Age: 3–11</small><br />
+                      <small class="text-dark">AED 325 per person</small>
+                    </div>
+                    <div class="input-group" style="width: 110px">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        type="button"
+                        onclick="updateCount('child', -1)"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        id="childCount"
+                        class="form-control text-center"
+                        value="0"
+                        readonly
+                      />
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        type="button"
+                        onclick="updateCount('child', 1)"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Total Section -->
+                  <div
+                    class="mb-2 d-flex justify-content-between align-items-center pe-2"
+                  >
+                    <div>
+                      <div class="fw-bold text-dark">Total:</div>
+                    </div>
+                    <div>
+                      <span id="totalPrice" class="fw-bold text-primary"
+                        >AED 350</span
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -233,32 +318,42 @@
 
           <!-- Title + Reviews + Wishlist -->
           <div class="row mt-4 g-2 align-items-center">
-            <div
-              class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start"
-            >
-              <!-- Left: Title -->
+            <!-- Left Column: Title -->
+            <div class="col-12 col-md-8">
               <h2 class="mb-2 mb-md-0">
-                From Abu Dhabi: Full Day Dubai City Tour
+                From Abu Dhabi: Full Day Dubai City Tour with Burj Khalifa Entry
+                and Desert Safari Combo
               </h2>
+            </div>
 
-              <!-- Right: Reviews + Heart -->
-              <div class="d-flex align-items-center mt-2 mt-md-0">
+            <!-- Right Column -->
+            <div class="col-12 col-md-4">
+              <div
+                class="d-flex flex-nowrap align-items-center justify-content-between justify-content-md-end gap-2"
+              >
                 <!-- Heart button -->
                 <button
-                  class="btn btn-light btn-lg d-flex align-items-center justify-content-center"
+                  class="btn btn-light btn-md d-flex align-items-center justify-content-center"
                 >
                   <i class="far fa-heart text-primary"></i>
                 </button>
-                <!-- Stars -->
-                <div class="d-flex align-items-center ms-3">
+
+                <!-- Stars + Review count -->
+                <div class="d-flex align-items-center flex-shrink-0">
                   <i class="fa fa-star text-warning"></i>
                   <i class="fa fa-star text-warning"></i>
                   <i class="fa fa-star text-warning"></i>
                   <i class="fa fa-star text-warning"></i>
                   <i class="far fa-star text-muted"></i>
+                  <small class="text-muted ms-1">4.0 (120)</small>
                 </div>
-                <!-- Review count -->
-                <small class="text-muted ms-2">4.0 (120 Reviews)</small>
+
+                <!-- Book Now button -->
+                <button
+                  class="btn btn-primary btn-sm d-flex align-items-center justify-content-center"
+                >
+                  Book Now
+                </button>
               </div>
             </div>
           </div>
@@ -976,6 +1071,37 @@
           }
         });
       });
+
+      const adultPrice = 350;
+      const childPrice = 325;
+
+      function updateCount(type, change) {
+        const input = document.getElementById(type + "Count");
+        let value = parseInt(input.value) + change;
+
+        // Adult min 1, Child min 0
+        if (type === "adult" && value < 1) value = 1;
+        if (type === "child" && value < 0) value = 0;
+
+        input.value = value;
+        calculateTotal();
+      }
+
+      function calculateTotal() {
+        const adultCount = parseInt(
+          document.getElementById("adultCount").value
+        );
+        const childCount = parseInt(
+          document.getElementById("childCount").value
+        );
+
+        const total = adultCount * adultPrice + childCount * childPrice;
+
+        document.getElementById("totalPrice").innerText = "AED " + total;
+      }
+
+      // Initial total
+      calculateTotal();
     </script>
   </body>
 </html>
