@@ -139,5 +139,16 @@
         };
     });
     });
+    
+     document.querySelectorAll('.toggle-content').forEach(btn => {
+        const content = btn.closest('.timeline-item').querySelector('.collapse-content');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            content.classList.toggle('open');
+            btn.classList.toggle('open');
+        });
+    });
 })(jQuery);
 

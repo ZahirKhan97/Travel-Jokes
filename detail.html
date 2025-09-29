@@ -177,10 +177,7 @@
             </div>
 
             <!-- Sidebar -->
-            <div
-              class="flex-shrink-0 w-100 w-lg-auto border"
-              style="max-width: 350px"
-            >
+            <div class="flex-shrink-0 w-100 w-lg-auto" style="max-width: 350px">
               <div
                 class="bg-light rounded p-4 shadow-sm h-100 d-flex flex-column position-relative"
               >
@@ -211,25 +208,27 @@
                 >
                   <!-- scrollable -->
 
-                  <!-- Price Info -->
+                  <!-- Price Section -->
                   <div class="mb-2 border-bottom">
                     <div>
-                      <small>From </small><del class="text-danger">AED 500</del>
+                      <small>From </small><del class="text-danger">AED 600</del>
                       <h4 class="mt-2">
-                        <span class="text-primary">AED 350</span>
+                        <span class="text-primary">AED 450</span>
                       </h4>
                     </div>
                   </div>
 
                   <!-- Start Date -->
-                  <div class="mb-2 border-bottom">
+                  <div class="mb-2 border-bottom position-relative">
                     <label class="fw-bold">Start Date</label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="startDate"
-                      required
-                    />
+                    <div class="position-relative">
+                      <input
+                        type="date"
+                        class="form-control border-0 border-bottom bg-transparent shadow-none"
+                        id="startDate"
+                        required
+                      />
+                    </div>
                   </div>
 
                   <!-- Adult Section -->
@@ -239,7 +238,7 @@
                     <div>
                       <div class="fw-bold">Adult</div>
                       <small class="text-dark">Age: 11+</small><br />
-                      <small class="text-dark">AED 350 per person</small>
+                      <small class="text-dark">AED 450 per person</small>
                     </div>
                     <div class="input-group" style="width: 110px">
                       <button
@@ -273,7 +272,7 @@
                     <div>
                       <div class="fw-bold">Child</div>
                       <small class="text-dark">Age: 3–11</small><br />
-                      <small class="text-dark">AED 325 per person</small>
+                      <small class="text-dark">AED 250 per person</small>
                     </div>
                     <div class="input-group" style="width: 110px">
                       <button
@@ -309,7 +308,7 @@
                     </div>
                     <div>
                       <span id="totalPrice" class="fw-bold text-primary"
-                        >AED 350</span
+                        >AED 450</span
                       >
                     </div>
                   </div>
@@ -1057,33 +1056,11 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-      document.querySelectorAll(".toggle-content").forEach((btn) => {
-        btn.addEventListener("click", function () {
-          const details =
-            this.closest(".timeline-item").querySelector(".collapse-content");
-          this.classList.toggle("open");
-          details.classList.toggle("open");
-
-          // Swap icons
-          const icon = this.querySelector("i");
-          if (this.classList.contains("open")) {
-            icon.classList.remove("fa-plus");
-            icon.classList.add("fa-minus");
-          } else {
-            icon.classList.remove("fa-minus");
-            icon.classList.add("fa-plus");
-          }
-        });
-      });
-
       const adultPrice = 350;
       const childPrice = 325;
-
       function updateCount(type, change) {
         const input = document.getElementById(type + "Count");
         let value = parseInt(input.value) + change;
-
-        // Adult min 1, Child min 0
         if (type === "adult" && value < 1) value = 1;
         if (type === "child" && value < 0) value = 0;
 
@@ -1098,14 +1075,22 @@
         const childCount = parseInt(
           document.getElementById("childCount").value
         );
-
         const total = adultCount * adultPrice + childCount * childPrice;
-
         document.getElementById("totalPrice").innerText = "AED " + total;
       }
 
       // Initial total
       calculateTotal();
+
+      const today = new Date().toISOString().split("T")[0];
+      const startDate = document.getElementById("startDate");
+      startDate.setAttribute("min", today);
+
+      startDate.addEventListener("click", function () {
+        if (this.showPicker) {
+          this.showPicker();
+        }
+      });
     </script>
   </body>
 </html>
